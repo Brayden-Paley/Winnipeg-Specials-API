@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class DealService {
@@ -25,12 +27,11 @@ public class DealService {
     }
 
     public List<Deal> getDealsByRestaurant(String restaurant){
-        List<Deal> dealList = new ArrayList<>();
         return dealRepository.getDealsByRestaurant(restaurant);
     }
 
-    public Deal getDealById(int id) {
-        return dealRepository.getOne(id);
+    public Deal getDealById(String id) {
+        return dealRepository.findById(id).get();
     }
 
     public void deleteDeal(Deal deal) {
@@ -42,7 +43,5 @@ public class DealService {
         //overrides and re-saves this deal
         dealRepository.save(updatedDeal);
     }
-
-
 }
 

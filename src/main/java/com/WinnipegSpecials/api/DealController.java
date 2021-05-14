@@ -36,7 +36,7 @@ public class DealController {
     }
 
     @GetMapping(path = "{dealId}")
-    public Deal getDealById(@PathVariable("dealId") int dealId){
+    public Deal getDealById(@PathVariable("dealId") String dealId){
         return dealService.getDealById(dealId);
     }
 
@@ -46,13 +46,13 @@ public class DealController {
     }
 
     @DeleteMapping(path = "{dealId}")
-    public void deleteDealByID(@PathVariable("dealId") int dealId){
+    public void deleteDealByID(@PathVariable("dealId") String dealId){
         Deal dealToDelete = dealService.getDealById(dealId);
         dealService.deleteDeal(dealToDelete);
     }
 
     @PutMapping(path = "{dealId}")
-    public void updateDeal(@PathVariable("dealId") int dealId){
+    public void updateDeal(@PathVariable("dealId") String dealId){
         Deal dealToUpdate = dealService.getDealById(dealId);
         dealService.updateDeal(dealToUpdate);
     }
