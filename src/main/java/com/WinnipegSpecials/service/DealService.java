@@ -21,9 +21,7 @@ public class DealService {
     }
 
     public List<Deal> getAllDeals() {
-        List<Deal> dealList = new ArrayList<>();
-        dealRepository.findAll().forEach(dealList::add);
-        return dealList;
+        return dealRepository.findAll();
     }
 
     public List<Deal> getDealsByRestaurant(String restaurant){

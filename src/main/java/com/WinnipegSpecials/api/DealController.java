@@ -51,10 +51,12 @@ public class DealController {
         dealService.deleteDeal(dealToDelete);
     }
 
+    //don't seem to need dealId as a path variable here, will consider changing
     @PutMapping(path = "{dealId}")
-    public void updateDeal(@PathVariable("dealId") String dealId){
-        Deal dealToUpdate = dealService.getDealById(dealId);
-        dealService.updateDeal(dealToUpdate);
+    public void updateDeal(@PathVariable("dealId") String dealId,
+                           @RequestBody Deal updatedDeal){
+        //Deal dealToUpdate = dealService.getDealById(dealId);
+        dealService.updateDeal(updatedDeal);
     }
 
 }

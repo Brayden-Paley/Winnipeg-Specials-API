@@ -1,14 +1,11 @@
 package com.WinnipegSpecials.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.UUID;
 
 @Entity
 @Table(name = "deals")
@@ -19,7 +16,7 @@ public class Deal {
     }
         @Id
         @Column(name = "dealId")
-        private String dealId = UUID.randomUUID().toString();
+        private String dealId;
         @Column(name = "restaurant")
         private String restaurant;
         private String title;
@@ -35,7 +32,7 @@ public class Deal {
         private boolean saturday;
         private boolean sunday;
 
-    public Deal(
+    public Deal(@JsonProperty("dealId") String dealId,
                 @JsonProperty("restaurant") String restaurant,
                 @JsonProperty("title") String title,
                 @JsonProperty("description") String description,
@@ -49,6 +46,7 @@ public class Deal {
                 @JsonProperty("friday") boolean friday,
                 @JsonProperty("saturday") boolean saturday,
                 @JsonProperty("sunday") boolean sunday) {
+            this.dealId = dealId;
             this.restaurant = restaurant;
             this.title = title;
             this.description = description;
@@ -64,7 +62,7 @@ public class Deal {
             this.sunday = sunday;
         }
 
-        public String getDealID() {
+        public String getDealId() {
             return dealId;
         }
 
