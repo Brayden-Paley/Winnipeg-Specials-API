@@ -46,7 +46,7 @@ public class DealController {
     }
 
     @DeleteMapping(path = "{dealId}")
-    public void deleteDealByID(@PathVariable("dealId") String dealId){
+    public void deleteDealById(@PathVariable("dealId") String dealId){
         Deal dealToDelete = dealService.getDealById(dealId);
         dealService.deleteDeal(dealToDelete);
     }
@@ -58,5 +58,4 @@ public class DealController {
         //Deal dealToUpdate = dealService.getDealById(dealId);
         dealService.updateDeal(updatedDeal);
     }
-
 }

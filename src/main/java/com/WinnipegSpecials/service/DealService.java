@@ -5,10 +5,7 @@ import com.WinnipegSpecials.model.Deal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class DealService {
@@ -29,7 +26,10 @@ public class DealService {
     }
 
     public Deal getDealById(String id) {
-        return dealRepository.findById(id).get();
+        if(dealRepository.findById(id).isPresent()){
+            return dealRepository.findById(id).get();
+        }
+        return new Deal("Not valid", "Not valid", "Not valid", "Not valid", 0, 0, false, false, false, false, false, false, false, false);
     }
 
     public void deleteDeal(Deal deal) {
