@@ -38,7 +38,7 @@ public class AuthController {
     }
 
     @GetMapping(path = "{authId}")
-    public Auth getAuthById(@PathVariable("AuthId") String authId){
+    public Auth getAuthById(@PathVariable("authId") String authId){
         return authService.getAuthByAuthId(authId);
     }
 

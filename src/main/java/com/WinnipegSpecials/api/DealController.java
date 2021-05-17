@@ -40,7 +40,7 @@ public class DealController {
         return dealService.getDealById(dealId);
     }
 
-    @GetMapping(path = "restaurant/{restaurant}")
+    @GetMapping(path = "/restaurant/{restaurant}")
     public List<Deal> getDealsByRestaurant(@PathVariable("restaurant") String restaurant){
         return dealService.getDealsByRestaurant(restaurant);
     }

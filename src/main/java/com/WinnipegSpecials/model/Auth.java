@@ -9,6 +9,9 @@ import javax.persistence.Table;
 @Table(name = "auth")
 public class Auth {
 
+    public Auth(){
+
+    }
     @Id
     @Column(name = "authId")
     public String authId;
