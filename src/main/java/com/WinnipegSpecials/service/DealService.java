@@ -1,6 +1,6 @@
 package com.WinnipegSpecials.service;
 
-import com.WinnipegSpecials.dao.DealRepository;
+import com.WinnipegSpecials.repository.DealRepository;
 import com.WinnipegSpecials.model.Deal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

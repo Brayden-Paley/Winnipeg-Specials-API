@@ -1,6 +1,6 @@
 package com.WinnipegSpecials.service;
 
-import com.WinnipegSpecials.dao.AuthRepository;
+import com.WinnipegSpecials.repository.AuthRepository;
 import com.WinnipegSpecials.model.Auth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +29,7 @@ public class AuthService {
         if(authRepository.findById(authId).isPresent()){
             return authRepository.findById(authId).get();
         }
-        return new Auth("invalid", "invalid", "invalid");
+        return new Auth("invalid", "invalid", "invalid", false);
     }
 
     public void deleteAuth(Auth auth){

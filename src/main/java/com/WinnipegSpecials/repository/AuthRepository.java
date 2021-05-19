@@ -1,4 +1,4 @@
-package com.WinnipegSpecials.dao;
+package com.WinnipegSpecials.repository;
 
 import com.WinnipegSpecials.model.Auth;
 import org.springframework.data.jpa.repository.JpaRepository;

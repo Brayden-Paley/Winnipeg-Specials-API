@@ -42,7 +42,7 @@ public class AuthController {
         return authService.getAuthByAuthId(authId);
     }
 
-    @GetMapping(path = "deal/{dealId}")
+    @GetMapping(path = "/deal/{dealId}")
     public List<Auth> getAuthByDealId(@PathVariable("dealId") String dealId){
         return authService.getAuthByDealId(dealId);
     }

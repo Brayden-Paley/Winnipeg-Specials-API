@@ -18,11 +18,13 @@ public class Auth {
     public String deviceId;
     @Column(name = "dealId")
     public String dealId;
+    public Boolean upvoted;
 
-    public Auth(String authId, String deviceId, String dealId) {
+    public Auth(String authId, String deviceId, String dealId, Boolean vote) {
         this.authId = authId;
         this.deviceId = deviceId;
         this.dealId = dealId;
+        this.upvoted = vote;
     }
 
     public String getAuthId() {
@@ -35,5 +37,9 @@ public class Auth {
 
     public String getDealId() {
         return dealId;
+    }
+
+    public Boolean getUpvoted() {
+        return upvoted;
     }
 }
