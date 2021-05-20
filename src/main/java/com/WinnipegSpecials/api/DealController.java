@@ -55,7 +55,6 @@ public class DealController {
     @PutMapping(path = "{dealId}")
     public void updateDeal(@PathVariable("dealId") String dealId,
                            @RequestBody Deal updatedDeal){
-        //Deal dealToUpdate = dealService.getDealById(dealId);
         dealService.updateDeal(updatedDeal);
     }
 }
