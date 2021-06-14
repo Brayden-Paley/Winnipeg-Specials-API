@@ -1,9 +1,7 @@
 package com.WinnipegSpecials.api;
 
 import com.WinnipegSpecials.model.Auth;
-import com.WinnipegSpecials.model.Deal;
 import com.WinnipegSpecials.service.AuthService;
-import com.WinnipegSpecials.service.DealService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

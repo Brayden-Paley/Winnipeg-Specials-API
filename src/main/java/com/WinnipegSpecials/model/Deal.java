@@ -31,6 +31,7 @@ public class Deal {
         private boolean friday;
         private boolean saturday;
         private boolean sunday;
+        private boolean reported;
 
     public Deal(@JsonProperty("dealId") String dealId,
                 @JsonProperty("restaurant") String restaurant,
@@ -45,7 +46,8 @@ public class Deal {
                 @JsonProperty("thursday") boolean thursday,
                 @JsonProperty("friday") boolean friday,
                 @JsonProperty("saturday") boolean saturday,
-                @JsonProperty("sunday") boolean sunday) {
+                @JsonProperty("sunday") boolean sunday,
+                @JsonProperty("reported") boolean reported) {
             this.dealId = dealId;
             this.restaurant = restaurant;
             this.title = title;
@@ -60,6 +62,7 @@ public class Deal {
             this.friday = friday;
             this.saturday = saturday;
             this.sunday = sunday;
+            this.reported = reported;
         }
 
         public String getDealId() {
@@ -121,6 +124,10 @@ public class Deal {
 
         public boolean isSunday() {
             return sunday;
+        }
+
+        public boolean isReported() {
+        return reported;
         }
 
 }

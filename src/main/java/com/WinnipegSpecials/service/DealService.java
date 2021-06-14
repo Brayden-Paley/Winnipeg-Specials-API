@@ -29,7 +29,7 @@ public class DealService {
         if(dealRepository.findById(id).isPresent()){
             return dealRepository.findById(id).get();
         }
-        return new Deal("Not valid", "Not valid", "Not valid", "Not valid", "0", 0, false, false, false, false, false, false, false, false);
+        return new Deal("Not valid", "Not valid", "Not valid", "Not valid", "0", 0, false, false, false, false, false, false, false, false, false);
     }
 
     public void deleteDeal(Deal deal) {
