@@ -21,7 +21,7 @@ public class Deal {
         private String restaurant;
         private String title;
         private String description;
-        private int price;
+        private String price;
         private int rating;
         private boolean everyday;
         private boolean monday;
@@ -36,7 +36,7 @@ public class Deal {
                 @JsonProperty("restaurant") String restaurant,
                 @JsonProperty("title") String title,
                 @JsonProperty("description") String description,
-                @JsonProperty("price") int price,
+                @JsonProperty("price") String price,
                 @JsonProperty("rating") int rating,
                 @JsonProperty("everyday") boolean everyday,
                 @JsonProperty("monday") boolean monday,
@@ -78,7 +78,7 @@ public class Deal {
             return description;
         }
 
-        public int getPrice() {
+        public String getPrice() {
             return price;
         }
 

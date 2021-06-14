@@ -18,7 +18,7 @@ public class DealControllerTest {
 
     @Test
     public void saveTest() {
-        Deal deal = new Deal("Test", "Test", "Test", "Test", 0, 0, false, false, false, false, false, false, false, false);
+        Deal deal = new Deal("Test", "Test", "Test", "Test", "0", 0, false, false, false, false, false, false, false, false);
         dealRepository.save(deal);
         Assert.assertNotNull(dealRepository.findAll());
     }
